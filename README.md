@@ -34,9 +34,10 @@ Not available
 
 - [Install Ruby](https://www.ruby-lang.org/en/documentation/installation/) on your local machine
 - Clone [this repository](https://github.com/marurevi/OOP-School-Library.git)
-  ```
- gh repo clone marurevi/OOP-School-Library
-  ```
+
+```
+gh repo clone marurevi/OOP-School-Library
+```
 - To get started, In the root directory run:
 
 ```
