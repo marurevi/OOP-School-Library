@@ -1,10 +1,17 @@
+require_relative './nameable'
+
 # Create class Person
-class Person
+class Person < Nameable
   def initialize(age, name = 'Unknown', parent_permission: true)
     @id = Random.new.rand(1..1000)
     @name = name
     @age = age
     @parent_permission = parent_permission
+    super()
+  end
+
+  def correct_name
+    @name
   end
 
   # accessor get methods
