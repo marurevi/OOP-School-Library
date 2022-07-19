@@ -1,4 +1,4 @@
-require_relative './decorator.rb'
+require_relative './decorator'
 
 # Create class Decorator
 class TrimmerDecorator < Decorator

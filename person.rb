@@ -1,6 +1,6 @@
-require_relative './nameable.rb'
+require_relative './nameable'
 
-# Create class Person 
+# Create class Person
 class Person < Nameable
   def initialize(age, name = 'Unknown', parent_permission: true)
     @id = Random.new.rand(1..1000)
