@@ -28,6 +28,8 @@ class App
   end
 
   def user_input
+    puts '=============================='
+    puts 'Welcome to the library system'
     display_options
     puts 'Enter your choice:'
     choice = gets.chomp.to_i
@@ -52,22 +54,26 @@ class App
   end
 
   def list_books
+    puts 'List of books:'
     @books.each do |book|
       puts "#{book.title} by #{book.author}"
     end
   end
 
   def list_people
+    puts 'List of people:'
     @people.each do |person|
       puts "#{person.name} (id: #{person.id}), age: #{person.age}"
     end
 
   def list_rentals
+    self.list_people
     puts 'Enter person id:'
     id = gets.chomp.to_i
     person = @people.find { |person| person.id == id }
     if person
       if person.rentals
+        puts "Rentals for #{person.name}:"
         person.rentals.each do |rental|
             puts "#{rental.date} - #{rental.book.title} by #{rental.book.author}"
         end
@@ -98,22 +104,29 @@ class App
   end
 
   def create_rental
+    self.list_people
     puts 'Enter person id:'
     id = gets.chomp.to_i
     person = @people.find { |person| person.id == id }
-    
     if person
+        self.list_books
         puts 'Enter book title:'
         title = gets.capitalize.chomp
         book = @books.find { |book| book.title == title }
         if book
-            rental = Rental.new(Date.today, book, person)
-            @rentals << rental
+          puts 'Enter rental date (YYYY-MM-DD):'
+          date = gets.chomp
+          rental = Rental.new(date, book, person)
+          @rentals << rental
         else
-            puts "Book with title: #{title} not found, please try again"
+          puts "Book with title: #{title} not found, please try again"
         end
     else
         puts "Person with id: #{id} not found, please try again"
     end
   end
+end
+
+app = App.new
+  app.run
 end
