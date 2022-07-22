@@ -2,6 +2,7 @@ require_relative './student'
 require_relative './teacher'
 require_relative './book'
 require_relative './rental'
+require 'pry'
 
 class App
   def initialize
