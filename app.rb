@@ -90,12 +90,31 @@ class App
   end
 
   def create_person
+    puts 'Do you want to create a student [1] or a teacher [2]?'
+    choice = gets.chomp.to_i
     puts 'Enter name:'
     name = gets.capitalize.chomp
     puts 'Enter age:'
     age = gets.chomp.to_i
-    person = Person.new(age, name)
-    @people << person
+
+    case choice
+    when 1
+      puts 'Enter classroom number:'
+      classroom = gets.chomp.to_i
+      puts 'Enter parent permission (yes [1] /no [2]):'
+      permission = gets.chomp.to_i
+      @people << if permission == 1
+                   Student.new(classroom, age, name, parent_permission: true)
+                 else
+                   Student.new(classroom, age, name, parent_permission: false)
+                 end
+    when 2
+      puts 'Enter specialization:'
+      specialization = gets.capitalize.chomp
+      @people << Teacher.new(specialization, age, name)
+    else
+      puts 'Invalid choice, please try again'
+    end
   end
 
   def create_book
