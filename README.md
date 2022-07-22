@@ -53,9 +53,7 @@ bundle install
 Open terminal and run ruby app in the command Line:
 
 ```
-ruby file.rb
-```
-
+ruby main.rb
 
 ## Authors
 
