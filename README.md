@@ -54,8 +54,6 @@ Open terminal and run ruby app in the command Line:
 
 ```
 ruby main.rb
-```
-
 
 ## Authors
 
