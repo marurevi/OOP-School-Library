@@ -1,8 +1,9 @@
-require_relative './student'
+require 'pry'
+require_relative './studentss'
 require_relative './teacher'
 require_relative './book'
-require_relative './rental'
-require 'pry'
+require_relative './rents'
+
 
 class App
   def initialize
