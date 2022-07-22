@@ -5,9 +5,9 @@ require_relative './rental'
 
 class App
   def initialize
-    @books = [] 
-    @people = [] 
-    @rentals = [] 
+    @books = []
+    @people = []
+    @rentals = []
     @exit = false
   end
 
@@ -27,61 +27,65 @@ class App
     puts '7 - Exit'
   end
 
+  # rubocop:disable Metrics/CyclomaticComplexity
   def user_input
-    puts '=============================='
-    puts 'Welcome to the library system'
-    display_options
-    puts 'Enter your choice:'
-    choice = gets.chomp.to_i
-    case choice
-    when 1
-      list_books
-    when 2
-      list_people
-    when 3
-      create_person
-    when 4
-      create_book
-    when 5
-      create_rental
-    when 6
-      list_rentals
-    when 7
-      @exit = true
-    else
-      puts 'Invalid choice'
+    loop do
+      puts '=============================='
+      display_options
+      puts '=============================='
+      puts 'Enter your choice:'
+      choice = gets.chomp.to_i
+      case choice
+      when 1 then list_books
+      when 2 then list_people
+      when 3 then create_person
+      when 4 then create_book
+      when 5 then create_rental
+      when 6 then list_rentals
+      when 7 then @exit = true
+                  default
+                  puts 'Invalid choice, please try again'
+      end
     end
   end
+  # rubocop:enable Metrics/CyclomaticComplexity
 
   def list_books
-    puts 'List of books:'
-    @books.each do |book|
-      puts "#{book.title} by #{book.author}"
+    if @books.empty?
+      puts 'No books in the library'
+    else
+      puts 'List of books:'
+      @books.each do |book|
+        puts "#{book.title} by #{book.author}"
+      end
     end
   end
 
   def list_people
-    puts 'List of people:'
-    @people.each do |person|
-      puts "#{person.name} (id: #{person.id}), age: #{person.age}"
+    if @people.empty?
+      puts 'No people in the library'
+    else
+      puts 'List of people:'
+      @people.each do |person|
+        puts "#{person.name} (id: #{person.id}), age: #{person.age}"
+      end
     end
+  end
 
   def list_rentals
-    self.list_people
+    list_people
     puts 'Enter person id:'
     id = gets.chomp.to_i
-    person = @people.find { |person| person.id == id }
-    if person
-      if person.rentals
-        puts "Rentals for #{person.name}:"
-        person.rentals.each do |rental|
-            puts "#{rental.date} - #{rental.book.title} by #{rental.book.author}"
-        end
-      else
-        puts 'No rentals'
-      end
+    person = @people.find { |prson| prson.id == id }
+    if person.nil?
+      puts "Person with id: #{id} not found, please try again"
+    elsif person.rentals.empty?
+      puts "No rentals for #{person.name}"
     else
-        puts "Person with id: #{id} not found, please try again"
+      puts "Rentals for #{person.name}:"
+      person.rentals.each do |rental|
+        puts "#{rental.date} - #{rental.book.title} by #{rental.book.author}"
+      end
     end
   end
 
@@ -104,29 +108,25 @@ class App
   end
 
   def create_rental
-    self.list_people
+    list_people
     puts 'Enter person id:'
     id = gets.chomp.to_i
-    person = @people.find { |person| person.id == id }
-    if person
-        self.list_books
-        puts 'Enter book title:'
-        title = gets.capitalize.chomp
-        book = @books.find { |book| book.title == title }
-        if book
-          puts 'Enter rental date (YYYY-MM-DD):'
-          date = gets.chomp
-          rental = Rental.new(date, book, person)
-          @rentals << rental
-        else
-          puts "Book with title: #{title} not found, please try again"
-        end
+    person = @people.find { |prson| prson.id == id }
+    if person.nil?
+      puts "Person with id: #{id} not found, please try again"
     else
-        puts "Person with id: #{id} not found, please try again"
+      list_books
+      puts 'Enter book title:'
+      title = gets.capitalize.chomp
+      book = @books.find { |bk| bk.title == title }
+      if book.nil?
+        puts "Book with title: #{title} not found, please try again"
+      else
+        puts 'Enter rental date (YYYY-MM-DD):'
+        date = gets.chomp
+        rental = Rental.new(date, book, person)
+        @rentals << rental
+      end
     end
   end
-end
-
-app = App.new
-  app.run
 end
