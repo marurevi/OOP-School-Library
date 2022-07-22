@@ -2,6 +2,7 @@ require_relative './student'
 require_relative './teacher'
 require_relative './book'
 require_relative './rental'
+require 'pry'
 
 class App
   def initialize
@@ -101,9 +102,9 @@ class App
     when 1
       puts 'Enter classroom number:'
       classroom = gets.chomp.to_i
-      puts 'Enter parent permission (yes [1] /no [2]):'
-      permission = gets.chomp.to_i
-      @people << if permission == 1
+      puts 'Enter parent permission (true /false):'
+      permission = gets.chomp.to_bool
+      @people << if permission == true
                    Student.new(classroom, age, name, parent_permission: true)
                  else
                    Student.new(classroom, age, name, parent_permission: false)
