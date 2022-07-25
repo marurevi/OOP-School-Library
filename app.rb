@@ -43,8 +43,8 @@ class App
       when 5 then create_rental
       when 6 then list_rentals
       when 7 then @exit = true
-                  default
-                  puts 'Invalid choice, please try again'
+      else
+        puts 'Invalid choice, please try again'
       end
     end
   end
