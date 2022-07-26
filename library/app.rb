@@ -17,13 +17,8 @@ class App
   attr_accessor :books, :people, :rentals, :exit
 
   def list_books
-    if @books.empty?
-      puts 'No books in the library'
-    else
-      puts 'List of books:'
-      @books.each do |book|
-        puts "#{book.title} by #{book.author}"
-      end
+    @books.each do |book|
+      puts "#{book.title} by #{book.author}"
     end
   end
 
