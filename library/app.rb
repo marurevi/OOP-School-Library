@@ -14,43 +14,7 @@ class App
   def run
     user_input unless @exit == true
   end
-
-  private
-
-  def display_options
-    puts '1 - List all books'
-    puts '2 - List all people'
-    puts '3 - Create a person'
-    puts '4 - Create a book'
-    puts '5 - Create a rental'
-    puts '6 - List all rentals for a given person id'
-    puts '7 - Exit'
-  end
-
-  # rubocop:disable Metrics/CyclomaticComplexity
-  def user_input
-    loop do
-      puts '=============================='
-      display_options
-      puts '=============================='
-      puts 'Enter your choice:'
-      choice = gets.chomp.to_i
-      case choice
-      when 1 then list_books
-      when 2 then list_people
-      when 3 then create_person
-      when 4 then create_book
-      when 5 then create_rental
-      when 6 then list_rentals
-      when 7 
-        @exit = true
-        break
-      else
-        puts 'Invalid choice, please try again'
-      end
-    end
-  end
-  # rubocop:enable Metrics/CyclomaticComplexity
+  attr_accessor :books, :people, :rentals, :exit
 
   def list_books
     if @books.empty?
@@ -101,14 +65,12 @@ class App
 
     case choice
     when 1
-      puts 'Enter classroom number:'
-      classroom = gets.chomp.to_i
       puts 'Enter parent permission (yes [1] /no [2]):'
       permission = gets.chomp.to_i
       @people << if permission == 1
-                   Student.new(classroom, age, name, parent_permission: true)
+                   Student.new(age, name, parent_permission: true)
                  else
-                   Student.new(classroom, age, name, parent_permission: false)
+                   Student.new(age, name, parent_permission: false)
                  end
     when 2
       puts 'Enter specialization:'
