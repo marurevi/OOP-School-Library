@@ -65,26 +65,8 @@ class App
     @books << book
   end
 
-  def create_rental
-    list_people
-    puts 'Enter person id:'
-    id = gets.chomp.to_i
-    person = @people.find { |prson| prson.id == id }
-    if person.nil?
-      puts "Person with id: #{id} not found, please try again"
-    else
-      list_books
-      puts 'Enter book title:'
-      title = gets.capitalize.chomp
-      book = @books.find { |bk| bk.title == title }
-      if book.nil?
-        puts "Book with title: #{title} not found, please try again"
-      else
-        puts 'Enter rental date (YYYY-MM-DD):'
-        date = gets.chomp
-        rental = Rental.new(date, book, person)
-        @rentals << rental
-      end
-    end
+  def create_rental(date, book, person)
+    rental = Rental.new(date, book, person)
+    @rentals << rental
   end
 end
