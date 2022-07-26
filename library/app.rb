@@ -12,7 +12,7 @@ class App
   end
 
   def run
-    user_input until @exit
+    user_input unless @exit == true
   end
 
   private
@@ -42,7 +42,9 @@ class App
       when 4 then create_book
       when 5 then create_rental
       when 6 then list_rentals
-      when 7 then @exit = true
+      when 7 
+        @exit = true
+        break
       else
         puts 'Invalid choice, please try again'
       end

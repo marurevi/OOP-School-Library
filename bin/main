@@ -1,4 +1,4 @@
-require_relative './app'
+require_relative './../library/app.rb'
 
 class Main
   puts 'Welcome to the library system'
@@ -6,5 +6,4 @@ class Main
   app.run
 end
 
-main = Main.new
-main.run
+main
