@@ -23,13 +23,8 @@ class App
   end
 
   def list_people
-    if @people.empty?
-      puts 'No people in the library'
-    else
-      puts 'List of people:'
-      @people.each do |person|
-        puts "#{person.name} (id: #{person.id}), age: #{person.age}"
-      end
+    @people.each do |person|
+      puts "#{person.name} (id: #{person.id}), age: #{person.age}"
     end
   end
 

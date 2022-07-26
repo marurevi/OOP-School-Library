@@ -4,6 +4,7 @@ require_relative './../library/create_person_menu.rb'
 require_relative './../library/create_book_menu.rb'
 require_relative './../library/create_rental_menu.rb'
 require_relative './../library/list_books_menu.rb'
+require_relative './../library/list_people_menu.rb'
 
 class Main
   app = App.new
@@ -12,7 +13,7 @@ class Main
     choice = gets.chomp.to_i
     case choice
     when 1 then ListBooksMenu.new(app).display
-    when 2 then app.list_people
+    when 2 then ListPeopleMenu.new(app).display
     when 3 then CreatePersonMenu.new(app).display
     when 4 then CreateBookMenu.new(app).display
     when 5 then CreateRentalMenu.new(app).display
