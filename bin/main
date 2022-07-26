@@ -1,5 +1,4 @@
 require_relative './../library/app.rb'
-<<<<<<< HEAD
 require_relative './../library/menu/main_menu.rb'
 require_relative './../library/menu/create_person_menu.rb'
 require_relative './../library/menu/create_book_menu.rb'
@@ -7,15 +6,6 @@ require_relative './../library/menu/create_rental_menu.rb'
 require_relative './../library/menu/list_books_menu.rb'
 require_relative './../library/menu/list_people_menu.rb'
 require_relative './../library/menu/list_rentals_menu.rb'
-=======
-require_relative './../library/main_menu.rb'
-require_relative './../library/create_person_menu.rb'
-require_relative './../library/create_book_menu.rb'
-require_relative './../library/create_rental_menu.rb'
-require_relative './../library/list_books_menu.rb'
-require_relative './../library/list_people_menu.rb'
-require_relative './../library/list_rentals_menu.rb'
->>>>>>> 3067aaff5caefc8463e11744811e7a410c913e64
 
 class Main
   app = App.new
