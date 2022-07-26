@@ -1,5 +1,7 @@
 require_relative './../library/app.rb'
 require_relative './../library/main_menu.rb'
+require_relative './../library/create_person_menu.rb'
+require_relative './../library/create_book_menu.rb'
 
 class Main
   app = App.new
@@ -9,8 +11,8 @@ class Main
     case choice
     when 1 then app.list_books
     when 2 then app.list_people
-    when 3 then app.create_person
-    when 4 then app.create_book
+    when 3 then CreatePersonMenu.new(app).display
+    when 4 then CreateBookMenu.new(app).display
     when 5 then app.create_rental
     when 6 then app.list_rentals
     when 7 
