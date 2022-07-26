@@ -1,10 +1,11 @@
 require_relative './../library/app.rb'
-require_relative './../library/main_menu.rb'
-require_relative './../library/create_person_menu.rb'
-require_relative './../library/create_book_menu.rb'
-require_relative './../library/create_rental_menu.rb'
-require_relative './../library/list_books_menu.rb'
-require_relative './../library/list_people_menu.rb'
+require_relative './../library/menu/main_menu.rb'
+require_relative './../library/menu/create_person_menu.rb'
+require_relative './../library/menu/create_book_menu.rb'
+require_relative './../library/menu/create_rental_menu.rb'
+require_relative './../library/menu/list_books_menu.rb'
+require_relative './../library/menu/list_people_menu.rb'
+require_relative './../library/menu/list_rentals_menu.rb'
 
 class Main
   app = App.new
@@ -17,7 +18,7 @@ class Main
     when 3 then CreatePersonMenu.new(app).display
     when 4 then CreateBookMenu.new(app).display
     when 5 then CreateRentalMenu.new(app).display
-    when 6 then app.list_rentals
+    when 6 then ListRentalsMenu.new(app).display
     when 7 
       @exit = true
       break
