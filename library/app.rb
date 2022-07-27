@@ -53,8 +53,9 @@ class App
     end
   end
 
-  def list_rentals(person)
-    person.rentals.each do |rental|
+  def list_rentals(person_id)
+    filtered_rentals = @rentals.select { |rental| rental.person.id == person_id }
+    filtered_rentals.each do |rental|
       puts "`#{rental.date} - #{rental.book.title} by #{rental.book.author}`"
     end
   end

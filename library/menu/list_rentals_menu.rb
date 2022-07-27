@@ -13,11 +13,9 @@ class ListRentalsMenu < Menu
     person = @app.people.find { |prson| prson.id == id }
     if person.nil?
       puts "Person with id: #{id} not found, please try again"
-    elsif person.rentals.empty?
-      puts "No rentals for #{person.name}"
     else
       puts "Rentals for #{person.name}:"
-      @app.list_rentals(person)
+      @app.list_rentals(id)
     end
   end
 end
