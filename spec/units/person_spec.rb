@@ -23,12 +23,12 @@ describe 'A person' do
   end
 
   context 'Has parent permission or is on age' do
-    it 'Can use the service' do
+    it 'Can use the library service' do
       expect(person.can_use_services?).to be(true)
     end
   end
   context "Doesn't have parent permission and it's younger than 18 years old" do
-    it "Can't use the service" do
+    it "Can't use the library service" do
       person3 = Person.new 10, parent_permission: false
       expect(person3.can_use_services?).to be(false)
     end
