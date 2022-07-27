@@ -4,7 +4,7 @@ require_relative './classroom'
 # Student class
 class Student < Person
   attr_reader :classroom
-  
+
   # public method
   def play_hooky
     "¯\(ツ)/¯"
