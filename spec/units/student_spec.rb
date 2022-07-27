@@ -1,5 +1,4 @@
 require_relative '../../library/student'
-# require_relative
 
 describe 'A student' do
   let(:student) { Student.new 10, 'Peter' }
