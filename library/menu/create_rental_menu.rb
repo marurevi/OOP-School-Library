@@ -9,7 +9,7 @@ class CreateRentalMenu < Menu
   def display
     @app.list_people
     puts 'Enter person id:'
-    id = gets.chomp.to_i
+    id = gets.chomp
     person = @app.people.find { |prson| prson.id == id }
     if person.nil?
       puts "Person with id: #{id} not found, please try again"

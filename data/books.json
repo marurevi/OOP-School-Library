@@ -1,0 +1,14 @@
+{
+  "books": [
+    {
+      "json_class": "Book",
+      "title": "Bbb",
+      "author": "Aaa"
+    },
+    {
+      "json_class": "Book",
+      "title": "Title 1",
+      "author": "Author 1"
+    }
+  ]
+}

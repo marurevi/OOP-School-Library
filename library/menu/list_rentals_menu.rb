@@ -1,4 +1,5 @@
 require_relative './menu'
+require 'pry'
 
 class ListRentalsMenu < Menu
   def initialize(app)
@@ -9,8 +10,9 @@ class ListRentalsMenu < Menu
   def display
     @app.list_people
     puts 'Enter person id:'
-    id = gets.chomp.to_i
+    id = gets.chomp
     person = @app.people.find { |prson| prson.id == id }
+    binding.pry
     if person.nil?
       puts "Person with id: #{id} not found, please try again"
     elsif person.rentals.empty?

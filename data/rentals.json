@@ -1,0 +1,36 @@
+{
+  "rentals": [
+    {
+      "json_class": "Rental",
+      "date": "222222222",
+      "book": {
+        "json_class": "Book",
+        "title": "Bbb",
+        "author": "Aaa"
+      },
+      "person": {
+        "json_class": "Student",
+        "id": "337",
+        "age": 111,
+        "name": "Aaa",
+        "parent_permission": false
+      }
+    },
+    {
+      "json_class": "Rental",
+      "date": "22222",
+      "book": {
+        "json_class": "Book",
+        "title": "Title 1",
+        "author": "Author 1"
+      },
+      "person": {
+        "json_class": "Teacher",
+        "id": "563",
+        "specialization": "Chemestry",
+        "age": 45,
+        "name": "Teacher"
+      }
+    }
+  ]
+}

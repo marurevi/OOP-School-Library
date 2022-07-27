@@ -2,13 +2,13 @@ require_relative './nameable'
 
 # Create class Person
 class Person < Nameable
-  def initialize(age, name = 'Unknown', parent_permission: true)
+  def initialize(age, name = 'Unknown', parent_permission: true, id: nil, rentals: [])
     super()
-    @id = Random.new.rand(1..1000)
+    @id = id || Random.rand(1..1000).to_s
     @name = name
     @age = age
     @parent_permission = parent_permission
-    @rentals = []
+    @rentals = rentals || []
   end
 
   def correct_name
