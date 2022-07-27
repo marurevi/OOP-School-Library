@@ -1,0 +1,20 @@
+{
+  "rentals": [
+    {
+      "json_class": "Rental",
+      "date": "1212121",
+      "book": {
+        "json_class": "Book",
+        "title": "Ttt",
+        "author": "Aaa"
+      },
+      "person": {
+        "json_class": "Student",
+        "id": "280",
+        "age": 1111,
+        "name": "Ssss",
+        "parent_permission": false
+      }
+    }
+  ]
+}
