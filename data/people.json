@@ -2,17 +2,10 @@
   "people": [
     {
       "json_class": "Student",
-      "id": "337",
-      "age": 111,
-      "name": "Aaa",
+      "id": "720",
+      "age": 1111,
+      "name": "Ssss",
       "parent_permission": false
-    },
-    {
-      "json_class": "Teacher",
-      "id": "563",
-      "specialization": "Chemestry",
-      "age": 45,
-      "name": "Teacher"
     }
   ]
 }

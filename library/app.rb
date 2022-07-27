@@ -15,16 +15,16 @@ class App
     @rentals = rentals['rentals'] || []
     @exit = false
   end
-  
+
   def read_data(file)
-    File.open(file) { |f| JSON.parse(f.read, create_additions: true)}
+    File.open(file) { |f| JSON.parse(f.read, create_additions: true) }
   end
 
   def write_data
     files = [
       { name: 'books', data: @books },
       { name: 'people', data: @people },
-      { name: 'rentals', data: @rentals }    
+      { name: 'rentals', data: @rentals }
     ]
 
     files.each do |file|
@@ -59,7 +59,7 @@ class App
     end
   end
 
-  def create_person(choice, age, name, specialization: nil, parent_permission: true, id: nil)
+  def create_person(choice, age, name, specialization: nil, parent_permission: true, id: nil) # rubocop:disable Metrics/ParameterLists
     @people << Student.new(age, name, parent_permission: parent_permission, id: id) if choice == 1
     @people << Teacher.new(specialization, age, name, id: id) if choice == 2
   end
