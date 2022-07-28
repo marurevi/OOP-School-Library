@@ -1,3 +1,5 @@
+#!/usr/bin/env ruby
+
 require_relative './../library/app.rb'
 require_relative './../library/menu/main_menu.rb'
 require_relative './../library/menu/create_person_menu.rb'
