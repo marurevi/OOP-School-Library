@@ -7,7 +7,7 @@ require_relative './../library/menu/list_books_menu.rb'
 require_relative './../library/menu/list_people_menu.rb'
 require_relative './../library/menu/list_rentals_menu.rb'
 
-class Main
+def main
   app = App.new
   loop do
     MainMenu.new.display
@@ -21,6 +21,7 @@ class Main
     when 6 then ListRentalsMenu.new(app).display
     when 7 
       @exit = true
+      app.write_data
       break
     else
       puts 'Invalid choice, please try again'

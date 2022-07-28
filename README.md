@@ -9,20 +9,10 @@
 - Save records of who borrowed a given book and when.
 - And all of this will be built in a beautiful and well-organized way!
 
-## How to build the "OOP school library" app
-> You will start by building the most essential pieces of the system. To do that, you will practice Object Oriented Programming. To build the app or system you will need to create the entities presented in this diagram. Spoiler alert: this is a UML class diagram that you did not get to know yet - it is a topic from upcoming lessons. However, it can give you an overall idea of what you are going to build.
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/microverseinc/curriculum-ruby/main/oop/images/uml_class_diagram.png?token=GHSAT0AAAAAABQBCGV5A23LMKCG3SDRDRACYWVYIGQ" alt="UML clss diagram" width="800px" />
-</p>
-
-> Once you have the core part prepared, you will create a simple UI layer which will be a console app interacting with a user. The final result will be similar to the one presented in the following video.
-
-[![UI example](https://img.youtube.com/vi/vkkgrhD6aXQ/0.jpg)](https://www.youtube.com/watch?v=vkkgrhD6aXQ)
-
 ## Built With
 
 - Ruby
+- Rspec
 - Vs Code
 
 ## Live Demo
@@ -53,8 +43,12 @@ bundle install
 Open terminal and run ruby app in the command Line:
 
 ```
-ruby main.rb
-
+ruby bin/main
+```
+In case you want to run test, write the following command in your terminal:
+```
+bin/rspec
+```
 ## Authors
 
 👤 **Mariana Revilla Lérida**
@@ -63,6 +57,11 @@ ruby main.rb
 - Twitter: [@MaruRevilla](https://twitter.com/MaruRevilla)
 - LinkedIn: [Mariana-Revilla-Lérida](https://linkedin.com/in/mariana-revilla-l%C3%A9rida-a12aba143)
 
+👤 **Andrés Agudelo Guzmán**
+
+- GitHub: [@anagudelogu](https://github.com/anagudelogu)
+- Twitter: [@AgudeloAndres\_\_](https://twitter.com/AgudeloAndres__)
+- LinkedIn: [Andres Agudelo Guzman](https://linkedin.com/in/aagst)
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!

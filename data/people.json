@@ -1,0 +1,11 @@
+{
+  "people": [
+    {
+      "json_class": "Student",
+      "id": "280",
+      "age": 1111,
+      "name": "Ssss",
+      "parent_permission": false
+    }
+  ]
+}
