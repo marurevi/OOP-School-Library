@@ -1,14 +1,14 @@
 #!/usr/bin/env ruby
 
-require_relative './../library/app.rb'
-require_relative './../library/menu/main_menu.rb'
-require_relative './../library/menu/create_person_menu.rb'
-require_relative './../library/menu/create_book_menu.rb'
-require_relative './../library/menu/create_rental_menu.rb'
-require_relative './../library/menu/list_books_menu.rb'
-require_relative './../library/menu/list_people_menu.rb'
-require_relative './../library/menu/list_rentals_menu.rb'
-
+require_relative './../library/app'
+require_relative './../library/menu/main_menu'
+require_relative './../library/menu/create_person_menu'
+require_relative './../library/menu/create_book_menu'
+require_relative './../library/menu/create_rental_menu'
+require_relative './../library/menu/list_books_menu'
+require_relative './../library/menu/list_people_menu'
+require_relative './../library/menu/list_rentals_menu'
+# rubocop:disable Metrics/CyclomaticComplexity
 def main
   app = App.new
   loop do
@@ -21,7 +21,7 @@ def main
     when 4 then CreateBookMenu.new(app).display
     when 5 then CreateRentalMenu.new(app).display
     when 6 then ListRentalsMenu.new(app).display
-    when 7 
+    when 7
       @exit = true
       app.write_data
       break
@@ -30,5 +30,6 @@ def main
     end
   end
 end
+# rubocop:enable Metrics/CyclomaticComplexity
 
 main
