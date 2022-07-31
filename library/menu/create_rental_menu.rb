@@ -15,11 +15,11 @@ class CreateRentalMenu < Menu
       puts "Person with id: #{id} not found, please try again"
     else
       @app.list_books
-      puts 'Enter book title:'
-      title = gets.capitalize.chomp
-      book = @app.books.find { |bk| bk.title == title }
+      puts 'Enter book index:'
+      book_idx = gets.chomp.to_i
+      book = @app.books[book_idx]
       if book.nil?
-        puts "Book with title: #{title} not found, please try again"
+        puts 'Book not found, please try again'
       else
         puts 'Enter rental date (YYYY-MM-DD):'
         date = gets.chomp

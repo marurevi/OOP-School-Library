@@ -42,8 +42,8 @@ class App
   attr_accessor :books, :people, :rentals, :exit
 
   def list_books
-    @books.each do |book|
-      puts "`#{book.title} by #{book.author}`"
+    @books.each_with_index do |book, index|
+      puts "#{index} - #{book.title} by #{book.author}"
     end
   end
 

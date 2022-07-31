@@ -15,6 +15,38 @@
         "name": "Ssss",
         "parent_permission": false
       }
+    },
+    {
+      "json_class": "Rental",
+      "date": "2022-12-12",
+      "book": {
+        "json_class": "Book",
+        "title": "T3",
+        "author": "A3"
+      },
+      "person": {
+        "json_class": "Student",
+        "id": "280",
+        "age": 1111,
+        "name": "Ssss",
+        "parent_permission": false
+      }
+    },
+    {
+      "json_class": "Rental",
+      "date": "2025-03--12",
+      "book": {
+        "json_class": "Book",
+        "title": "T2",
+        "author": "A2"
+      },
+      "person": {
+        "json_class": "Teacher",
+        "id": "451",
+        "specialization": "Biology",
+        "age": 35,
+        "name": "Teacher"
+      }
     }
   ]
 }

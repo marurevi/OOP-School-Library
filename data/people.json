@@ -6,6 +6,13 @@
       "age": 1111,
       "name": "Ssss",
       "parent_permission": false
+    },
+    {
+      "json_class": "Teacher",
+      "id": "451",
+      "specialization": "Biology",
+      "age": 35,
+      "name": "Teacher"
     }
   ]
 }
